@@ -14,9 +14,9 @@ GameObject:
   - component: {fileID: 4921037090044657317}
   - component: {fileID: 2876791789519674506}
   - component: {fileID: -3559189519135963036}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: StandardEnemy
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -92,6 +92,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   collided: 0
+  speed: 0.1
   canvas: {fileID: 0}
 --- !u!50 &2876791789519674506
 Rigidbody2D:

@@ -1,11 +1,13 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor;
 using UnityEngine;
 
 public class StandardEnemy : MonoBehaviour
 {
     public Boolean collided;
+    [SerializeField] private float speed;
     private float x;
     public Canvas canvas;
     // Start is called before the first frame update
@@ -20,7 +22,7 @@ public class StandardEnemy : MonoBehaviour
         if (collided == false)
         {
             transform.position = new Vector3(x, transform.position.y, transform.position.z);
-            x -= 1;
+            x -= speed;
         }
         if(transform.position.x <= 90)
         {
@@ -34,15 +36,15 @@ public class StandardEnemy : MonoBehaviour
         {
             Debug.Log("Collided");
             collided = true;
-
         }
     }
+
     private void OnCollisionExit2D(Collision2D collision)
     {
         if (collision.gameObject.tag == "Unit")
-        {
-            Debug.Log("No Longer Collided");
-            collided = false;
-        }
+            {
+             Debug.Log("No Longer Collided");
+             collided = false;
+            }
     }
 }
