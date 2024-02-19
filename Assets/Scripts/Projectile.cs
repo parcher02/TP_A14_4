@@ -31,7 +31,9 @@ public class Projectile : MonoBehaviour
             //Allows the projectile to move and if it collides with an enemy it will take damage away from the enemy
             if (hitInfo)
             {
+                
                enemy = hitInfo.collider.GetComponent<StandardEnemy>();
+                Debug.Log(Vector2.Distance(enemy.transform.position, transform.position));
                 if (Vector2.Distance(enemy.transform.position, transform.position) < 50)
                 {
                     Debug.Log("enemy hit!");

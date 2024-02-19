@@ -45,7 +45,7 @@ public class EnemySpawnerController : MonoBehaviour
     }
     private void rngSelector()
     {
-        rng = UnityEngine.Random.Range(1, 3);
+        rng = UnityEngine.Random.Range(1, 4);
         if(rng == 1) { 
         location = lane1.transform.position;
         }else if(rng == 2)

@@ -27,6 +27,7 @@ public class StandardPiece : MonoBehaviour, IPointerDownHandler, IBeginDragHandl
     private void Start()
     {
         shotPoint = transform.GetChild(0).GetComponent<Transform>();
+        gameObject.GetComponent<BoxCollider2D>().enabled = false;
     }
     public void OnPointerDown(PointerEventData eventData)
     {
@@ -56,6 +57,7 @@ public class StandardPiece : MonoBehaviour, IPointerDownHandler, IBeginDragHandl
     {
         if (placed)
         {
+            gameObject.GetComponent<BoxCollider2D>().enabled = true;
             if (timeBetweenShot <= 0)
             {
                 Instantiate(projectile, shotPoint.position, transform.rotation);

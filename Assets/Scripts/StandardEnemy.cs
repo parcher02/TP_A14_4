@@ -14,7 +14,7 @@ public class StandardEnemy : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        x = transform.position.x;
+        x = transform.position.x;        
     }
 
     // Update is called once per frame
