@@ -33,7 +33,6 @@ public class Spawner : MonoBehaviour
         solider.transform.SetParent(canvas.transform, false);
         hasSoliderPlaced.canvas = canvas;
         solider.transform.position = gameObject.transform.position;
-        //solider.transform.parent = canvas.transform;
 
     }
 }

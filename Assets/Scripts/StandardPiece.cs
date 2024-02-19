@@ -35,7 +35,9 @@ public class StandardPiece : MonoBehaviour, IPointerDownHandler, IBeginDragHandl
 
     public void OnBeginDrag(PointerEventData eventData)
     {
-        canvasGroup.blocksRaycasts = false;
+       
+            canvasGroup.blocksRaycasts = false;
+        
     }
 
     public void OnEndDrag(PointerEventData eventData)
@@ -45,18 +47,24 @@ public class StandardPiece : MonoBehaviour, IPointerDownHandler, IBeginDragHandl
 
     public void OnDrag(PointerEventData eventData)
     {
-        rectTransform.anchoredPosition += eventData.delta / canvas.scaleFactor;
+        if (placed == false)
+        {
+            rectTransform.anchoredPosition += eventData.delta / canvas.scaleFactor;
+        }     
     }
     private void Update()
     {
-       if(timeBetweenShot <= 0 )
+        if (placed)
         {
-            Instantiate(projectile, shotPoint.position, transform.rotation);
-            timeBetweenShot = startTimeBetweenShot;
-        }
-        else
-        {
-            timeBetweenShot -= Time.deltaTime;
+            if (timeBetweenShot <= 0)
+            {
+                Instantiate(projectile, shotPoint.position, transform.rotation);
+                timeBetweenShot = startTimeBetweenShot;
+            }
+            else
+            {
+                timeBetweenShot -= Time.deltaTime;
+            }
         }
     }
 

@@ -7,7 +7,7 @@ public class gridSlot : MonoBehaviour, IDropHandler
 {
   public void OnDrop(PointerEventData eventData)
     {
-        if(eventData.pointerDrag != null)
+        if(eventData.pointerDrag != null && eventData.pointerDrag.GetComponent<StandardPiece>().placed == false)
         {
             eventData.pointerDrag.GetComponent<RectTransform>().anchoredPosition = GetComponent<RectTransform>().anchoredPosition;
             eventData.pointerDrag.GetComponent<StandardPiece>().placed = true;

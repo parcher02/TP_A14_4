@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 6305992643598706368}
   - component: {fileID: 2723239270208652987}
   - component: {fileID: -7056772788835908464}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Projectile
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -34,11 +34,11 @@ RectTransform:
   m_Father: {fileID: 0}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -79.70618, y: -72.44409}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: -99.708176, y: -76.947464}
   m_SizeDelta: {x: 100, y: 100}
-  m_Pivot: {x: 0.5, y: 0.5}
+  m_Pivot: {x: 0, y: 0}
 --- !u!222 &6305992643598706368
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -92,5 +92,5 @@ MonoBehaviour:
   speed: 1000
   lifeTime: 10
   distance: 100
-  damage: 10
+  damage: 50
   timeChange: 0.1

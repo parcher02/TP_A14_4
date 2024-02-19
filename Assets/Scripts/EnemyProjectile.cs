@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Projectile : MonoBehaviour
+public class EnemyProjectile : MonoBehaviour
 {
     public float speed;
     public float lifeTime;
@@ -13,7 +13,7 @@ public class Projectile : MonoBehaviour
     float lastChange = 0;
     private Canvas canvas;
     private StandardEnemy enemy;
-    private LayerMask layerMask = 64; // Layer 6 0100 0000
+    private LayerMask layerMask = 128; // Layer 6 0100 0000
     // Start is called before the first frame update
     void Start()
     {
@@ -27,21 +27,19 @@ public class Projectile : MonoBehaviour
         lastChange += Time.deltaTime;
         try
         {
-            RaycastHit2D hitInfo = Physics2D.Raycast(transform.position, transform.up, distance, layerMask);  
+            RaycastHit2D hitInfo = Physics2D.Raycast(transform.position, transform.up, distance, layerMask);           
             //Allows the projectile to move and if it collides with an enemy it will take damage away from the enemy
             if (hitInfo)
             {
-               enemy = hitInfo.collider.GetComponent<StandardEnemy>();
                 if (Vector2.Distance(enemy.transform.position, transform.position) < 50)
                 {
                     Debug.Log("enemy hit!");
                     enemy.health -= damage;
                     DestroyProjectile();
                 }
-                    
             }
-            transform.Translate(Vector2.right * speed * Time.deltaTime);
-            
+            transform.Translate(Vector2.left * speed * Time.deltaTime);
+
         }
         catch (NullReferenceException)
         {

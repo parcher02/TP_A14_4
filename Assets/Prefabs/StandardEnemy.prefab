@@ -30,7 +30,7 @@ RectTransform:
   m_GameObject: {fileID: 4645789289994700345}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: -1, y: 1, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -69,8 +69,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: -1174524501, guid: 541c6c6448679c941b9dfe09fb674ed7, type: 3}
-  m_Type: 1
+  m_Sprite: {fileID: 1329635509, guid: a62a44001a3742d4bbe6ba906ba9571b, type: 3}
+  m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -94,6 +94,7 @@ MonoBehaviour:
   collided: 0
   speed: 0.1
   canvas: {fileID: 0}
+  health: 100
 --- !u!50 &2876791789519674506
 Rigidbody2D:
   serializedVersion: 4

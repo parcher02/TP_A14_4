@@ -10,6 +10,7 @@ public class StandardEnemy : MonoBehaviour
     [SerializeField] private float speed;
     private float x;
     public Canvas canvas;
+    public int health;
     // Start is called before the first frame update
     void Start()
     {
@@ -24,7 +25,7 @@ public class StandardEnemy : MonoBehaviour
             transform.position = new Vector3(x, transform.position.y, transform.position.z);
             x -= speed;
         }
-        if(transform.position.x <= 90)
+        if(transform.position.x <= 90 || health <= 0)
         {
             Destroy(gameObject);
         }
