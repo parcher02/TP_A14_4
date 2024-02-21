@@ -33,7 +33,7 @@ public class Projectile : MonoBehaviour
             {
                 
                enemy = hitInfo.collider.GetComponent<StandardEnemy>();
-                Debug.Log(Vector2.Distance(enemy.transform.position, transform.position));
+              //  Debug.Log(Vector2.Distance(enemy.transform.position, transform.position));
                 if (Vector2.Distance(enemy.transform.position, transform.position) < 50)
                 {
                     Debug.Log("enemy hit!");

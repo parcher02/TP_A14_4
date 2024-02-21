@@ -92,5 +92,5 @@ MonoBehaviour:
   speed: 1000
   lifeTime: 10
   distance: 100
-  damage: 50
+  damage: 20
   timeChange: 0.1
