@@ -16,9 +16,11 @@ public class StandardPiece : MonoBehaviour, IPointerDownHandler, IBeginDragHandl
     private float timeBetweenShot;
     public float startTimeBetweenShot;
     public GameObject projectile;
+    private GameObject Bullet;
     private Transform shotPoint;
     public float offset;
-
+    private Boolean enemyInRange;
+    Animator animator;
     private void Awake()
     {
         rectTransform = GetComponent<RectTransform>();
@@ -26,6 +28,7 @@ public class StandardPiece : MonoBehaviour, IPointerDownHandler, IBeginDragHandl
     }
     private void Start()
     {
+        animator = GetComponent<Animator>();
         shotPoint = transform.GetChild(0).GetComponent<Transform>();
         gameObject.GetComponent<BoxCollider2D>().enabled = false;
     }
@@ -58,15 +61,48 @@ public class StandardPiece : MonoBehaviour, IPointerDownHandler, IBeginDragHandl
         if (placed)
         {
             gameObject.GetComponent<BoxCollider2D>().enabled = true;
-            if (timeBetweenShot <= 0)
+            if (enemyInRange)
             {
-                Instantiate(projectile, shotPoint.position, transform.rotation);
-                timeBetweenShot = startTimeBetweenShot;
+                
+                if (timeBetweenShot <= 0)
+                {
+                    Bullet = Instantiate(projectile, shotPoint.position, transform.rotation);
+                    Bullet.transform.SetParent(canvas.transform, false);
+                    Bullet.transform.position = shotPoint.position;
+                    timeBetweenShot = startTimeBetweenShot;
+                }
+                else
+                {
+                    timeBetweenShot -= Time.deltaTime;
+                }
             }
-            else
-            {
-                timeBetweenShot -= Time.deltaTime;
-            }
+        }
+        animator.SetBool("Placed", placed);
+        animator.SetBool("Attack", enemyInRange);
+    }
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.tag == "Enemy")
+        {
+            enemyInRange = true;
+            Debug.Log("Enemy in Range!");
+        }
+        else
+        {
+            enemyInRange = false;
+        }
+    }
+    private void OnCollisionStay2D(Collision2D collision)
+    {
+        Debug.Log("h");
+        if(collision.gameObject.tag == "Enemy")
+        {
+            enemyInRange = true;
+            Debug.Log("Enemy in Range!");
+        }
+        else
+        {
+            enemyInRange = false;
         }
     }
 

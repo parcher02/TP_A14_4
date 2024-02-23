@@ -18,7 +18,7 @@ public class Projectile : MonoBehaviour
     void Start()
     {
         canvas = GameObject.Find("Canvas").GetComponent<Canvas>();
-        transform.SetParent(canvas.transform, false);
+        //transform.SetParent(canvas.transform, false);
         Invoke("DestroyProjectile", lifeTime);
     }
     // Update is called once per frame

@@ -35,6 +35,9 @@ public class StandardEnemy : MonoBehaviour
             if (attack)
             {
                 Destroy(unit);
+               // animator.PlayInFixedTime("blobAttack", 0, 9.0f);
+               // animator.SetBool("Collided", false);
+                animator.SetTrigger("Idle");
             }
         }
         if(transform.position.x <= 90 || health <= 0)
@@ -52,8 +55,9 @@ public class StandardEnemy : MonoBehaviour
             unit = collision.gameObject;
             Debug.Log("Collided");
             collided = true;
-            animator.PlayInFixedTime("blobMove", 0,9.0f);
-            animator.SetBool("Collided", true);
+          //  animator.PlayInFixedTime("blobMove", 0,9.0f);
+            animator.SetTrigger("Attack");
+          //  animator.SetBool("Collided", true);
            
         }
     }
