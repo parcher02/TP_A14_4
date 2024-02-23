@@ -52,6 +52,7 @@ public class StandardEnemy : MonoBehaviour
             unit = collision.gameObject;
             Debug.Log("Collided");
             collided = true;
+            animator.PlayInFixedTime("blobMove", 0,9.0f);
             animator.SetBool("Collided", true);
            
         }
