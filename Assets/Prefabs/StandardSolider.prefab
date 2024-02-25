@@ -99,9 +99,11 @@ MonoBehaviour:
   canvas: {fileID: 0}
   health: 0
   clicked: 0
-  startTimeBetweenShot: 2
+  startTimeBetweenShot: 0.5
   projectile: {fileID: 7835250191797847077, guid: e37f17d17a695714bb7e512f88d8b55b, type: 3}
   offset: 180
+  enemyInRange: 0
+  Shoot: 0
 --- !u!225 &2643203011578608838
 CanvasGroup:
   m_ObjectHideFlags: 0
@@ -240,7 +242,7 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 1
+  m_GravityScale: 0
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
@@ -251,7 +253,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 6
+  m_Constraints: 7
 --- !u!1 &2168582524326267338
 GameObject:
   m_ObjectHideFlags: 0
@@ -276,7 +278,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2168582524326267338}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 105.8, y: 50, z: 0}
+  m_LocalPosition: {x: 93.1, y: 32.3, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []

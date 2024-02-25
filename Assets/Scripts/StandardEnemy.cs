@@ -6,6 +6,7 @@ using UnityEngine;
 
 public class StandardEnemy : MonoBehaviour
 {
+    Rigidbody2D rb;
     public Boolean collided;
     [SerializeField] private float speed;
     private float x;
@@ -17,17 +18,24 @@ public class StandardEnemy : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        rb = this.GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
         x = transform.position.x;        
     }
-
+    private void FixedUpdate()
+    {
+        
+        
+        Vector2 direction = new Vector2(-1,0);
+        rb.MovePosition((Vector2)transform.position + direction);
+    }
     // Update is called once per frame
     void Update()
     {
         if (collided == false)
         {
-            transform.position = new Vector3(x, transform.position.y, transform.position.z);
-            x -= speed;
+            //transform.position = new Vector3(x, transform.position.y, transform.position.z);
+            //x -= speed;
             animator.SetBool("Collided", false);
         }
         else
