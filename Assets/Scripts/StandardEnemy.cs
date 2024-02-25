@@ -48,7 +48,7 @@ public class StandardEnemy : MonoBehaviour
                 animator.SetTrigger("Idle");
             }
         }
-        if(transform.position.x <= 90 || health <= 0)
+        if(health <= 0)
         {
             Destroy(gameObject);
         }
@@ -67,6 +67,13 @@ public class StandardEnemy : MonoBehaviour
             animator.SetTrigger("Attack");
           //  animator.SetBool("Collided", true);
            
+        }
+        if(collision.gameObject.tag == "Defence")
+        {
+            Destroy(gameObject);
+            TowerHealth tower = collision.gameObject.GetComponent<TowerHealth>();
+            tower.health -= 10;
+          
         }
     }
 
