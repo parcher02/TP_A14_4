@@ -15,12 +15,15 @@ public class StandardEnemy : MonoBehaviour
     Animator animator;
     public Boolean attack;
     GameObject unit;
+   [SerializeField] private Boolean collidedWithTower;
+    TowerHealth tower;
     // Start is called before the first frame update
     void Start()
     {
         rb = this.GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
         x = transform.position.x;        
+        tower = GameObject.Find("Tower").GetComponent<TowerHealth>();
     }
     private void FixedUpdate()
     {
@@ -47,8 +50,14 @@ public class StandardEnemy : MonoBehaviour
                // animator.SetBool("Collided", false);
                 animator.SetTrigger("Idle");
             }
+        
         }
-        if(health <= 0)
+        if (collidedWithTower && attack)
+        {
+            Destroy(gameObject);
+            tower.health -= 10;
+        }
+        if (health <= 0)
         {
             Destroy(gameObject);
         }
@@ -70,9 +79,10 @@ public class StandardEnemy : MonoBehaviour
         }
         if(collision.gameObject.tag == "Defence")
         {
-            Destroy(gameObject);
-            TowerHealth tower = collision.gameObject.GetComponent<TowerHealth>();
-            tower.health -= 10;
+            collidedWithTower = true;
+            animator.SetTrigger("Attack");
+           
+          
           
         }
     }
