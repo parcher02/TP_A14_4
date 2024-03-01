@@ -9,6 +9,7 @@ public class StandardEnemy : MonoBehaviour
     Rigidbody2D rb;
     public Boolean collided;
     [SerializeField] private float speed;
+    [SerializeField] private int damage;
     private float x;
     public Canvas canvas;
     public int health;
@@ -55,7 +56,7 @@ public class StandardEnemy : MonoBehaviour
         if (collidedWithTower && attack)
         {
             Destroy(gameObject);
-            tower.health -= 10;
+            tower.health -= damage;
         }
         if (health <= 0)
         {

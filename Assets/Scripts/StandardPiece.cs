@@ -92,7 +92,6 @@ public class StandardPiece : MonoBehaviour, IPointerDownHandler, IBeginDragHandl
     }
     private void OnTriggerStay2D(Collider2D collision)
     {
-        Debug.Log("h");
         if (collision.gameObject.tag == "Enemy")
         {
             enemyInRange = true;
