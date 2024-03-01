@@ -12,10 +12,14 @@ public class EnemySpawnerController : MonoBehaviour
     private GameObject enemy;
     private StandardEnemy enemyCanvas;
     public Boolean waveComplete;
+    public int waveNumber;
     private Canvas canvas;
     private int rng;
     private int timeBetweenSpawn = 3;
-        private int numberOfEnemies = 10;
+    private int numberOfEnemies = 10;
+    public List<string> eneimes = new List<string>();
+    public List<string> usableEneimes = new List<string>();
+    [SerializeField] private List<string> unusedEneimes = new List<string>();
     private Vector3 location;
     // Start is called before the first frame update
     void Start()
@@ -24,10 +28,25 @@ public class EnemySpawnerController : MonoBehaviour
         lane1 = GameObject.Find("EnemyLane1").GetComponent<Transform>();
         lane2 = GameObject.Find("EnemyLane2").GetComponent<Transform>();
         lane3 = GameObject.Find("EnemyLane3").GetComponent<Transform>();
-        if (waveComplete == false) { 
-        
+        while(waveNumber <= 50)
+        {
+            if (waveComplete == false && GameObject.FindGameObjectsWithTag("Enemy").Length >= 0)
+            {
+
                 StartCoroutine(createEnemy());
             }
+            if (waveComplete == true)
+            {
+                waveComplete = false;
+                numberOfEnemies += 2;
+                waveNumber++;
+            }
+            if (GameObject.FindGameObjectsWithTag("Enemy").Length == 0)
+            {
+                waveComplete = true;
+            }
+        }
+     
         
     }
     private IEnumerator createEnemy()
@@ -42,6 +61,7 @@ public class EnemySpawnerController : MonoBehaviour
             rngSelector();
             enemy.transform.position = location;       
         }
+        
     }
     private void rngSelector()
     {
@@ -55,6 +75,14 @@ public class EnemySpawnerController : MonoBehaviour
         else if(rng == 3)
         {
             location = lane3.transform.position;
+        }
+    }
+    private void EnemySelector()
+    {
+        for(int i = 0; i < numberOfEnemies;i++)
+        {
+            int random = UnityEngine.Random.Range(1, usableEneimes.Capacity + 1);
+            eneimes.Add(usableEneimes[random]);
         }
     }
     // Update is called once per frame
