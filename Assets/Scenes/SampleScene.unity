@@ -3628,6 +3628,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 4645789289994700345, guid: 1313716b182357f4d895e993ec808740, type: 3}
     - target: {fileID: 283664718144497182, guid: 77453bfc2cbff0844953abc6f8d8a2a4, type: 3}
+      propertyPath: waveNumber
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 283664718144497182, guid: 77453bfc2cbff0844953abc6f8d8a2a4, type: 3}
       propertyPath: unusedEneimes.Array.size
       value: 1
       objectReference: {fileID: 0}
@@ -3637,12 +3641,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 283664718144497182, guid: 77453bfc2cbff0844953abc6f8d8a2a4, type: 3}
       propertyPath: unusedEneimes.Array.data[0]
-      value: BlobTank
-      objectReference: {fileID: 0}
+      value: 
+      objectReference: {fileID: 4563601107756941437, guid: eaccb5fcfef3e70418b260b76de86093, type: 3}
     - target: {fileID: 283664718144497182, guid: 77453bfc2cbff0844953abc6f8d8a2a4, type: 3}
       propertyPath: usableEneimes.Array.data[0]
-      value: StandardEnemy
-      objectReference: {fileID: 0}
+      value: 
+      objectReference: {fileID: 4645789289994700345, guid: 1313716b182357f4d895e993ec808740, type: 3}
     - target: {fileID: 4690276775986996616, guid: 77453bfc2cbff0844953abc6f8d8a2a4, type: 3}
       propertyPath: m_Name
       value: enemySpawner
