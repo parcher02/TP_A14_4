@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Runtime.CompilerServices;
+using TMPro;
 using Unity.VisualScripting.Antlr3.Runtime.Tree;
 using UnityEngine;
 
@@ -10,6 +11,7 @@ public class EnemySpawnerController : MonoBehaviour
     [SerializeField]  private GameObject enemyType;
     private Transform lane1, lane2, lane3;
     private GameObject enemy;
+    public int enemyCount;
     private StandardEnemy enemyCanvas;
     public Boolean waveComplete;
     public int waveNumber;
@@ -24,9 +26,15 @@ public class EnemySpawnerController : MonoBehaviour
     [SerializeField] private List<GameObject> unusedEneimes = new List<GameObject>();
     private Vector3 location;
     private int counter;
+    TextMeshProUGUI waveText;
+    TextMeshProUGUI text;
+    PlayerCurrency currency;
     // Start is called before the first frame update
     void Start()
     {
+        currency = GameObject.Find("Tower").GetComponent<PlayerCurrency>();
+        waveText = GameObject.Find("WaveText").GetComponent<TextMeshProUGUI>();
+        text = GameObject.Find("NumberOfEnemies").GetComponent<TextMeshProUGUI>();
         canvas = GameObject.Find("Canvas").GetComponent<Canvas>();
         lane1 = GameObject.Find("EnemyLane1").GetComponent<Transform>();
         lane2 = GameObject.Find("EnemyLane2").GetComponent<Transform>();
@@ -57,10 +65,13 @@ public class EnemySpawnerController : MonoBehaviour
             Debug.Log(random);
             eneimes.Add(usableEneimes[random]);
         }
+        enemyCount = eneimes.Count;
     }
     // Update is called once per frame
     void Update()
     {
+        waveText.text = "Wave " + waveNumber;
+        text.text = "Number of Enemies: " + enemyCount;
         if(timeCounter > 0)
         {
             timeCounter -= Time.deltaTime;
@@ -109,6 +120,7 @@ public class EnemySpawnerController : MonoBehaviour
             startOfRound = true;
             numberOfEnemies += 2;
             waveNumber++;
+            currency.addBricks(numberOfEnemies*10); //Will need tweaked (Discussion with team needed)
         EnemySelector();
         }
     }

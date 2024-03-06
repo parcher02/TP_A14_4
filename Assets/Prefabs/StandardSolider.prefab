@@ -104,6 +104,9 @@ MonoBehaviour:
   offset: 180
   enemyInRange: 0
   Shoot: 0
+  notPlaced: 0
+  currency: {fileID: 0}
+  cost: 50
 --- !u!225 &2643203011578608838
 CanvasGroup:
   m_ObjectHideFlags: 0

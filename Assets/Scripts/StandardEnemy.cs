@@ -17,14 +17,19 @@ public class StandardEnemy : MonoBehaviour
     public Boolean attack;
     GameObject unit;
    [SerializeField] private Boolean collidedWithTower;
+    PlayerCurrency currency;
     TowerHealth tower;
+    EnemySpawnerController enemySpawner;
+    public int worth;
     // Start is called before the first frame update
     void Start()
     {
+        enemySpawner = GameObject.Find("enemySpawner").GetComponent<EnemySpawnerController>();
         rb = this.GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
         x = transform.position.x;        
         tower = GameObject.Find("Tower").GetComponent<TowerHealth>();
+        currency = GameObject.Find("Tower").GetComponent<PlayerCurrency>();
     }
     private void FixedUpdate()
     {
@@ -55,11 +60,14 @@ public class StandardEnemy : MonoBehaviour
         }
         if (collidedWithTower && attack)
         {
+            enemySpawner.enemyCount -= 1;
             Destroy(gameObject);
             tower.health -= damage;
         }
         if (health <= 0)
         {
+            currency.addBricks(worth);
+            enemySpawner.enemyCount -= 1;
             Destroy(gameObject);
         }
      

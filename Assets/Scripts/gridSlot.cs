@@ -11,6 +11,7 @@ public class gridSlot : MonoBehaviour, IDropHandler
         {
             eventData.pointerDrag.GetComponent<RectTransform>().anchoredPosition = GetComponent<RectTransform>().anchoredPosition;
             eventData.pointerDrag.GetComponent<StandardPiece>().placed = true;
+            eventData.pointerDrag.GetComponent<StandardPiece>().currency.removeBricks(eventData.pointerDrag.GetComponent<StandardPiece>().cost);
         }
     }
 }

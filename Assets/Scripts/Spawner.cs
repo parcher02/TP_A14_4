@@ -20,7 +20,7 @@ public class Spawner : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (solider != null && hasSoliderPlaced.placed == true)
+        if (solider != null && hasSoliderPlaced.placed == true || hasSoliderPlaced.notPlaced == true)
         {
            createPiece();
         }

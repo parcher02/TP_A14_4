@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.Collections.LowLevel.Unsafe;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.EventSystems;
@@ -21,8 +22,12 @@ public class StandardPiece : MonoBehaviour, IPointerDownHandler, IBeginDragHandl
     private Transform shotPoint;
     public float offset;
     [SerializeField] private Boolean enemyInRange;
+    private Vector3 originalPosition;
     Animator animator;
     public Boolean Shoot;
+    public Boolean notPlaced;
+    public PlayerCurrency currency;
+    [SerializeField] public int cost;
     private void Awake()
     {
         rectTransform = GetComponent<RectTransform>();
@@ -35,6 +40,8 @@ public class StandardPiece : MonoBehaviour, IPointerDownHandler, IBeginDragHandl
     }
     private void Start()
     {
+        currency = GameObject.Find("Tower").GetComponent<PlayerCurrency>();
+        originalPosition = transform.position;
         animator = GetComponent<Animator>();
         shotPoint = transform.GetChild(0).GetComponent<Transform>();
         gameObject.GetComponent<BoxCollider2D>().enabled = false;
@@ -54,11 +61,16 @@ public class StandardPiece : MonoBehaviour, IPointerDownHandler, IBeginDragHandl
     public void OnEndDrag(PointerEventData eventData)
     {
         canvasGroup.blocksRaycasts = true;
+        if (placed == false)
+        {
+            notPlaced = true;
+            Destroy(gameObject);
+        }
     }
 
     public void OnDrag(PointerEventData eventData)
     {
-        if (placed == false)
+        if (placed == false && currency.bricks >= cost)
         {
             rectTransform.anchoredPosition += eventData.delta / canvas.scaleFactor;
         }     
