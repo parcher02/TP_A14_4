@@ -9,9 +9,13 @@ public class gridSlot : MonoBehaviour, IDropHandler
     {
         if(eventData.pointerDrag != null && eventData.pointerDrag.GetComponent<StandardPiece>().placed == false)
         {
-            eventData.pointerDrag.GetComponent<RectTransform>().anchoredPosition = GetComponent<RectTransform>().anchoredPosition;
-            eventData.pointerDrag.GetComponent<StandardPiece>().placed = true;
-            eventData.pointerDrag.GetComponent<StandardPiece>().currency.removeBricks(eventData.pointerDrag.GetComponent<StandardPiece>().cost);
+            if (eventData.pointerDrag.GetComponent<StandardPiece>().currency.bricks >= eventData.pointerDrag.GetComponent<StandardPiece>().cost)
+            {
+                eventData.pointerDrag.GetComponent<RectTransform>().anchoredPosition = GetComponent<RectTransform>().anchoredPosition;
+                eventData.pointerDrag.GetComponent<StandardPiece>().placed = true;
+                eventData.pointerDrag.GetComponent<StandardPiece>().currency.removeBricks(eventData.pointerDrag.GetComponent<StandardPiece>().cost);
+            }
+            
         }
     }
 }

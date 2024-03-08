@@ -98,8 +98,7 @@ public class EnemySpawnerController : MonoBehaviour
                 catch (Exception)
                 {
 
-                }
-                   
+                }                  
             
             }
         }
@@ -113,8 +112,15 @@ public class EnemySpawnerController : MonoBehaviour
             Debug.Log("Wave Value: " + wave);
             if (wave == 0)
             {
-                usableEneimes.Add(unusedEneimes[0]);
-                unusedEneimes.Remove(unusedEneimes[0]);
+                try
+                {
+                    usableEneimes.Add(unusedEneimes[0]);
+                    unusedEneimes.Remove(unusedEneimes[0]);
+                }
+                catch (ArgumentOutOfRangeException)
+                {
+
+                }
             }
             waveComplete = false;
             startOfRound = true;
