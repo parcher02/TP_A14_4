@@ -11,7 +11,7 @@ public class TowerHealth : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        canvas = GameObject.Find("Canvas").GetComponent<Canvas>();
+        canvas = GameObject.Find("Player&EnemyUI").GetComponent<Canvas>();
         text = GameObject.Find("Health").GetComponent<TextMeshProUGUI>();
     }
 

@@ -17,7 +17,7 @@ public class Projectile : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        canvas = GameObject.Find("Canvas").GetComponent<Canvas>();
+        canvas = GameObject.Find("Player&EnemyUI").GetComponent<Canvas>();
         //transform.SetParent(canvas.transform, false);
         Invoke("DestroyProjectile", lifeTime);
     }

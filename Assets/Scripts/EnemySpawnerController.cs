@@ -9,7 +9,7 @@ using UnityEngine;
 public class EnemySpawnerController : MonoBehaviour
 {
     [SerializeField]  private GameObject enemyType;
-    private Transform lane1, lane2, lane3;
+    private Transform lane1, lane2, lane3, lane4, lane5;
     private GameObject enemy;
     public int enemyCount;
     private StandardEnemy enemyCanvas;
@@ -35,26 +35,33 @@ public class EnemySpawnerController : MonoBehaviour
         currency = GameObject.Find("Tower").GetComponent<PlayerCurrency>();
         waveText = GameObject.Find("WaveText").GetComponent<TextMeshProUGUI>();
         text = GameObject.Find("NumberOfEnemies").GetComponent<TextMeshProUGUI>();
-        canvas = GameObject.Find("Canvas").GetComponent<Canvas>();
+        canvas = GameObject.Find("Player&EnemyUI").GetComponent<Canvas>();
         lane1 = GameObject.Find("EnemyLane1").GetComponent<Transform>();
         lane2 = GameObject.Find("EnemyLane2").GetComponent<Transform>();
         lane3 = GameObject.Find("EnemyLane3").GetComponent<Transform>();
+        lane4 = GameObject.Find("EnemyLane4").GetComponent<Transform>();
+        lane5 = GameObject.Find("EnemyLane5").GetComponent<Transform>();
         EnemySelector();
     }
   
  
     private void rngSelector()
     {
-        rng = UnityEngine.Random.Range(1, 4);
+        rng = UnityEngine.Random.Range(1,6);
         if(rng == 1) { 
         location = lane1.transform.position;
         }else if(rng == 2)
         {
             location = lane2.transform.position;
-        }
-        else if(rng == 3)
+        }else if(rng == 3)
         {
             location = lane3.transform.position;
+        }else if(rng == 4)
+        {
+            location = lane4.transform.position;
+        }else if(rng == 5)
+        {
+            location = lane5.transform.position;
         }
     }
     private void EnemySelector()
