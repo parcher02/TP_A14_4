@@ -8,6 +8,8 @@ public class TowerHealth : MonoBehaviour
     public int health = 100;
     TextMeshProUGUI text;
     Canvas canvas;
+   public GameObject gameover;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -19,5 +21,9 @@ public class TowerHealth : MonoBehaviour
     void Update()
     {
         text.text = "Health: " + health + "/100";
+        if (health <=0)
+        {
+            gameover.SetActive(true);
+        }
     }
 }

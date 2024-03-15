@@ -19,6 +19,11 @@ public class menu_scripts : MonoBehaviour
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 1);//when adding this to the main game insure that the game scense is set to 0 on the build settings 
     }
 
+    public void resetgame()
+        {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+    }
+
     public void quitgame()
     {
        Application.Quit();
