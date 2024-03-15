@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class TowerHealth : MonoBehaviour
 {
@@ -19,5 +20,9 @@ public class TowerHealth : MonoBehaviour
     void Update()
     {
         text.text = "Health: " + health + "/100";
+        if(health <= 0)
+        {
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 1);//when adding this to the main game insure that the game scense is set to 0 on the build settings 
+        }
     }
 }
