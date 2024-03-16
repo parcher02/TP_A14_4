@@ -16,6 +16,7 @@ GameObject:
   - component: {fileID: -3559189519135963036}
   - component: {fileID: 7434327058589734470}
   - component: {fileID: 6869913962136865291}
+  - component: {fileID: -7208789269418668750}
   m_Layer: 6
   m_Name: StandardEnemy
   m_TagString: Enemy
@@ -100,6 +101,7 @@ MonoBehaviour:
   health: 100
   attack: 0
   collidedWithTower: 0
+  settingsMenu: {fileID: 0}
   worth: 50
 --- !u!50 &2876791789519674506
 Rigidbody2D:
@@ -239,3 +241,15 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 131.52, y: 94.88}
   m_EdgeRadius: 0
+--- !u!114 &-7208789269418668750
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4645789289994700345}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ea71b872cb37776469b4f8dfb906c9ee, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

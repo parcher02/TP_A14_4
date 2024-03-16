@@ -20,13 +20,10 @@ public class StandardEnemy : MonoBehaviour
     PlayerCurrency currency;
     TowerHealth tower;
     EnemySpawnerController enemySpawner;
-    private GameObject settingsMenu;
     public int worth;
     // Start is called before the first frame update
     void Start()
     {
-        settingsMenu = GameObject.Find("settingsmenu").GetComponent<GameObject>();
-        settingsMenu.SetActive(false);
         enemySpawner = GameObject.Find("enemySpawner").GetComponent<EnemySpawnerController>();
         rb = this.GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
@@ -44,17 +41,6 @@ public class StandardEnemy : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-       if(settingsMenu.activeSelf) {
-            gameObject.SetActive(false);
-       }
-       else
-       {
-            if(gameObject.activeSelf == false)
-            {
-                gameObject.SetActive(true);
-            }
-           
-
             if (collided == false)
         {
             //transform.position = new Vector3(x, transform.position.y, transform.position.z);
@@ -84,7 +70,7 @@ public class StandardEnemy : MonoBehaviour
             enemySpawner.enemyCount -= 1;
             Destroy(gameObject);
         }
-       }
+       
 
     }
 

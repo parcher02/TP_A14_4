@@ -16,6 +16,7 @@ GameObject:
   - component: {fileID: 7939133453512616068}
   - component: {fileID: -4471224213280616975}
   - component: {fileID: -8836050306348293270}
+  - component: {fileID: 7351526147060702499}
   m_Layer: 6
   m_Name: BlobTank
   m_TagString: Enemy
@@ -239,3 +240,15 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 131.52, y: 94.88}
   m_EdgeRadius: 0
+--- !u!114 &7351526147060702499
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4563601107756941437}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ea71b872cb37776469b4f8dfb906c9ee, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
