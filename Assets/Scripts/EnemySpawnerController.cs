@@ -5,9 +5,13 @@ using System.Runtime.CompilerServices;
 using TMPro;
 using Unity.VisualScripting.Antlr3.Runtime.Tree;
 using UnityEngine;
+using UnityEngine.UI;
+
+
 
 public class EnemySpawnerController : MonoBehaviour
 {
+    private Slider slider;
     [SerializeField]  private GameObject enemyType;
     private Transform lane1, lane2, lane3, lane4, lane5;
     private GameObject enemy;
@@ -27,14 +31,16 @@ public class EnemySpawnerController : MonoBehaviour
     private Vector3 location;
     private int counter;
     TextMeshProUGUI waveText;
-    TextMeshProUGUI text;
+    //TextMeshProUGUI text;
     PlayerCurrency currency;
+
     // Start is called before the first frame update
     void Start()
     {
         currency = GameObject.Find("Tower").GetComponent<PlayerCurrency>();
         waveText = GameObject.Find("WaveText").GetComponent<TextMeshProUGUI>();
-        text = GameObject.Find("NumberOfEnemies").GetComponent<TextMeshProUGUI>();
+        slider = GameObject.Find("enemybar").GetComponent<Slider>();
+        //text = GameObject.Find("NumberOfEnemies").GetComponent<TextMeshProUGUI>();
         canvas = GameObject.Find("Player&EnemyUI").GetComponent<Canvas>();
         lane1 = GameObject.Find("EnemyLane1").GetComponent<Transform>();
         lane2 = GameObject.Find("EnemyLane2").GetComponent<Transform>();
@@ -78,7 +84,8 @@ public class EnemySpawnerController : MonoBehaviour
     void Update()
     {
         waveText.text = "Wave " + waveNumber;
-        text.text = "Number of Enemies: " + enemyCount;
+        slider.value = enemyCount;
+        //text.text = "Number of Enemies: " + enemyCount;
         if(timeCounter > 0)
         {
             timeCounter -= Time.deltaTime;
@@ -133,6 +140,7 @@ public class EnemySpawnerController : MonoBehaviour
             startOfRound = true;
             numberOfEnemies += 2;
             waveNumber++;
+            slider.value +=2;
             currency.addBricks(numberOfEnemies*10); //Will need tweaked (Discussion with team needed)
         EnemySelector();
         }
