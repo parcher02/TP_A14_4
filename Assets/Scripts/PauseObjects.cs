@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -18,21 +19,28 @@ public class PauseObjects : MonoBehaviour
     {
         if (paused)
         {
-            if(gameObject.GetComponent<Button>() == null) {
+            if(gameObject.GetComponent<Button>() == null && gameObject.GetComponent<Projectile>() == null) {
                 gameObject.GetComponent<Image>().enabled = false;
                 gameObject.GetComponent<Rigidbody2D>().simulated = false;
+            }else if (gameObject.GetComponent<Projectile>() != null){
+                gameObject.GetComponent<Projectile>().speed = 0;
+                gameObject.GetComponent<Image>().enabled = false;
             }
-
         }
         else
         {
-            if (gameObject.GetComponent<Button>() == null)
+            if (gameObject.GetComponent<Button>() == null && gameObject.GetComponent<Projectile>() == null)
             {
                 gameObject.GetComponent<Image>().enabled = true;
                 gameObject.GetComponent<Rigidbody2D>().simulated = true;
             }
-           
-            
+            else if (gameObject.GetComponent<Projectile>() != null)
+            {
+                gameObject.GetComponent<Image>().enabled = true;
+                gameObject.GetComponent<Projectile>().speed = 1000;
+            }
+
+
         }
     }
     public void buttonPressed()
