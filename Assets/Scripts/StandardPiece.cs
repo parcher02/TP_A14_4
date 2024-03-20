@@ -5,6 +5,7 @@ using Unity.Collections.LowLevel.Unsafe;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.EventSystems;
+using UnityEngine.UI;
 //https://www.youtube.com/watch?v=BGr-7GZJNXg
 public class StandardPiece : MonoBehaviour, IPointerDownHandler, IBeginDragHandler, IEndDragHandler,IDragHandler
 {
@@ -12,6 +13,8 @@ public class StandardPiece : MonoBehaviour, IPointerDownHandler, IBeginDragHandl
     public Boolean placed;
     [SerializeField] public Canvas canvas;
     [SerializeField] private int health;
+    [SerializeField] private int damage;
+    [SerializeField] private Color projectileColour;
     public Boolean clicked;
     private CanvasGroup canvasGroup;
     private RectTransform rectTransform;
@@ -87,6 +90,8 @@ public class StandardPiece : MonoBehaviour, IPointerDownHandler, IBeginDragHandl
                     if (timeBetweenShot <= 0)
                     {
                         Bullet = Instantiate(projectile, shotPoint.position, transform.rotation);
+                        Bullet.GetComponent<Projectile>().damage = damage;
+                        Bullet.GetComponent<Image>().color = projectileColour;
                         Bullet.transform.SetParent(canvas.transform, false);
                         Bullet.transform.position = shotPoint.position;
                         timeBetweenShot = startTimeBetweenShot;

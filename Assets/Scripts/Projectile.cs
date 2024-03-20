@@ -8,7 +8,7 @@ public class Projectile : MonoBehaviour
     public float speed;
     public float lifeTime;
     public float distance;
-    public int damage;
+    [HideInInspector] public int damage;
     public float timeChange = 0.1f;
     float lastChange = 0;
     private Canvas canvas;
