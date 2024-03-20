@@ -7,7 +7,7 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 //https://www.youtube.com/watch?v=BGr-7GZJNXg
-public class StandardPiece : MonoBehaviour, IPointerDownHandler, IBeginDragHandler, IEndDragHandler,IDragHandler
+public class StandardPiece : MonoBehaviour, IPointerDownHandler, IBeginDragHandler, IEndDragHandler,IDragHandler, IPointerClickHandler
 {
     Rigidbody2D rb;
     public Boolean placed;
@@ -76,9 +76,19 @@ public class StandardPiece : MonoBehaviour, IPointerDownHandler, IBeginDragHandl
         if (placed == false && currency.bricks >= cost)
         {
             rectTransform.anchoredPosition += eventData.delta / canvas.scaleFactor;
-        }     
+        }
+       
     }
-    private void Update()
+    public void OnPointerClick(PointerEventData eventData)
+    {
+        if (eventData.button == PointerEventData.InputButton.Right && placed == true)
+        {
+            Debug.Log("DELETE");
+            Destroy(gameObject);
+            currency.addBricks(cost / 2);
+        }
+    }
+        private void Update()
     {
         if (placed)
         {
