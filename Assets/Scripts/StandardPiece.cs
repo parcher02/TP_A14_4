@@ -11,7 +11,8 @@ public class StandardPiece : MonoBehaviour, IPointerDownHandler, IBeginDragHandl
 {
     Rigidbody2D rb;
     public Boolean placed;
-    [SerializeField] public Canvas canvas;
+    [SerializeField] private Boolean isDemolitionist;
+    public Canvas canvas;
     [SerializeField] private int health;
     [SerializeField] private int damage;
     [SerializeField] private Color projectileColour;
@@ -31,6 +32,7 @@ public class StandardPiece : MonoBehaviour, IPointerDownHandler, IBeginDragHandl
     public Boolean notPlaced;
     public PlayerCurrency currency;
     [SerializeField] public int cost;
+     public GameObject enemy;
     private void Awake()
     {
         rectTransform = GetComponent<RectTransform>();
@@ -94,14 +96,15 @@ public class StandardPiece : MonoBehaviour, IPointerDownHandler, IBeginDragHandl
         {
             gameObject.GetComponent<BoxCollider2D>().enabled = true;
             if (enemyInRange)
-            {
-                //if (Shoot)
-                //{
+            {           
                     if (timeBetweenShot <= 0)
                     {
                         Bullet = Instantiate(projectile, shotPoint.position, transform.rotation);
                         Bullet.GetComponent<Projectile>().damage = damage;
                         Bullet.GetComponent<Image>().color = projectileColour;
+                        Bullet.GetComponent<Projectile>().isDemolitionist = isDemolitionist;
+                    Bullet.GetComponent<Projectile>().target = enemy;
+                    Bullet.GetComponent<Projectile>().unit = gameObject;
                         Bullet.transform.SetParent(canvas.transform, false);
                         Bullet.transform.position = shotPoint.position;
                         timeBetweenShot = startTimeBetweenShot;
@@ -109,9 +112,7 @@ public class StandardPiece : MonoBehaviour, IPointerDownHandler, IBeginDragHandl
                     else
                     {
                         timeBetweenShot -= Time.deltaTime;
-                    }
-                //}
-
+                    }                                              
             }
         }
         animator.SetBool("Placed", placed);
@@ -122,6 +123,11 @@ public class StandardPiece : MonoBehaviour, IPointerDownHandler, IBeginDragHandl
         if (collision.gameObject.tag == "Enemy")
         {
             enemyInRange = true;
+            if(enemy == null)
+            {
+                Debug.Log("First enemy found!");
+                enemy = collision.gameObject;
+            }
             Debug.Log("Enemy in Range!");
         }
         else
