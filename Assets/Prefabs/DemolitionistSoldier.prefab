@@ -105,7 +105,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
+  m_Sprite: {fileID: -182535506, guid: 86df3877585938e4397beeea40925b3f, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -135,7 +135,7 @@ MonoBehaviour:
   projectileColour: {r: 0.027450982, g: 0.43529415, b: 0, a: 0}
   clicked: 0
   startTimeBetweenShot: 2
-  projectile: {fileID: 6285760298892808297, guid: 3813804690e777f42af3f9f463226222, type: 3}
+  projectile: {fileID: 1055419334482619256, guid: 53963346a66018b4b9ff7aad6c308598, type: 3}
   offset: 180
   enemyInRange: 0
   Shoot: 0

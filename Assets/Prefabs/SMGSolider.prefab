@@ -48,6 +48,7 @@ GameObject:
   - component: {fileID: 1827712047520789199}
   - component: {fileID: 5810253970246976405}
   - component: {fileID: 9052371503409129690}
+  - component: {fileID: 6421276057185636169}
   m_Layer: 8
   m_Name: SMGSolider
   m_TagString: Unit
@@ -127,6 +128,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   placed: 0
+  isDemolitionist: 0
   canvas: {fileID: 0}
   health: 0
   damage: 5
@@ -140,6 +142,7 @@ MonoBehaviour:
   notPlaced: 0
   currency: {fileID: 0}
   cost: 75
+  enemy: {fileID: 0}
 --- !u!225 &5635913677737725787
 CanvasGroup:
   m_ObjectHideFlags: 0
@@ -290,3 +293,15 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &6421276057185636169
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5551929930095800444}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ea71b872cb37776469b4f8dfb906c9ee, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

@@ -64,7 +64,7 @@ public class Projectile : MonoBehaviour
                 baseY = Mathf.Lerp(unit.transform.position.y, target.transform.position.y, (nextX - unitX) / dist);
                 height = 2 * (nextX - unitX) * (nextX - targetX) / (0.25f * dist * dist);
 
-                Vector3 movePosition = new Vector3(nextX, baseY + height, -1);
+                Vector3 movePosition = new Vector3(nextX, baseY + height, unit.transform.position.z);
                 transform.position = movePosition;
                 Debug.Log(movePosition);
             }

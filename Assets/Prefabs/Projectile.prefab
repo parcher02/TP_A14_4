@@ -90,11 +90,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bc56d98e03f2ae74f89d91470f35d182, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isDemolitionist: 0
   speed: 1000
   lifeTime: 5
   distance: 100
   damage: 10
   timeChange: 0.1
+  unit: {fileID: 0}
+  target: {fileID: 0}
 --- !u!114 &9064805321373110785
 MonoBehaviour:
   m_ObjectHideFlags: 0
