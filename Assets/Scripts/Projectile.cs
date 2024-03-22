@@ -5,15 +5,25 @@ using UnityEngine;
 
 public class Projectile : MonoBehaviour
 {
+    [HideInInspector]  public Boolean isDemolitionist;
     public float speed;
     public float lifeTime;
     public float distance;
-    public int damage;
+    [HideInInspector] public int damage;
     public float timeChange = 0.1f;
     float lastChange = 0;
     private Canvas canvas;
     private StandardEnemy enemy;
     private LayerMask layerMask = 64; // Layer 6 0100 0000
+
+    public GameObject unit;
+    public GameObject target;
+
+    private float unitX, targetX;
+
+    private float dist, nextX;
+
+    private float baseY, height;
     // Start is called before the first frame update
     void Start()
     {
@@ -41,13 +51,31 @@ public class Projectile : MonoBehaviour
                     DestroyProjectile();
                 }
                     
+            }else if(hitInfo && isDemolitionist)
+            {
+                Debug.Log("grenade landed!");
             }
-            transform.Translate(Vector2.right * speed * Time.deltaTime);
+            if (isDemolitionist)
+            {
+                unitX = unit.transform.position.x;
+                targetX = target.transform.position.x;
+                dist = targetX - unitX;
+                nextX = Mathf.MoveTowards(transform.position.x, targetX, speed * Time.deltaTime);
+                baseY = Mathf.Lerp(unit.transform.position.y, target.transform.position.y, (nextX - unitX) / dist);
+                height = 2 * (nextX - unitX) * (nextX - targetX) / (0.25f * dist * dist);
+
+                Vector3 movePosition = new Vector3(nextX, baseY + height, -1);
+                transform.position = movePosition;
+                Debug.Log(movePosition);
+            }
+            else{
+                transform.Translate(Vector2.right * speed * Time.deltaTime);
+            }
+            
             
         }
         catch (NullReferenceException)
         {
-            Debug.Log(2);
         }
     }
     void DestroyProjectile()
