@@ -15,7 +15,7 @@ public class Projectile : MonoBehaviour
     private Canvas canvas;
     private StandardEnemy enemy;
     private LayerMask layerMask = 64; // Layer 6 0100 0000
-
+    private GameObject lasttarget;
     public GameObject unit;
     public GameObject target;
 
@@ -39,7 +39,7 @@ public class Projectile : MonoBehaviour
         {
             RaycastHit2D hitInfo = Physics2D.Raycast(transform.position, transform.up, distance, layerMask);  
             //Allows the projectile to move and if it collides with an enemy it will take damage away from the enemy
-            if (hitInfo)
+            if (hitInfo && isDemolitionist == false)
             {
                 
                enemy = hitInfo.collider.GetComponent<StandardEnemy>();
@@ -53,20 +53,36 @@ public class Projectile : MonoBehaviour
                     
             }else if(hitInfo && isDemolitionist)
             {
-                Debug.Log("grenade landed!");
+              //  if (Vector2.Distance(enemy.transform.position, transform.position) < 10)
+              //  {
+                    Debug.Log("grenade landed!");
+                    gameObject.GetComponent<CircleCollider2D>().enabled = true;
+             //   }             
             }
             if (isDemolitionist)
             {
                 unitX = unit.transform.position.x;
-                targetX = target.transform.position.x;
-                dist = targetX - unitX;
-                nextX = Mathf.MoveTowards(transform.position.x, targetX, speed * Time.deltaTime);
-                baseY = Mathf.Lerp(unit.transform.position.y, target.transform.position.y, (nextX - unitX) / dist);
-                height = 2 * (nextX - unitX) * (nextX - targetX) / (0.25f * dist * dist);
+                try
+                {
+                    targetX = target.transform.position.x;
+                    dist = targetX - unitX;
+                    nextX = Mathf.MoveTowards(transform.position.x, targetX, speed * Time.deltaTime);
+                    baseY = Mathf.Lerp(unit.transform.position.y, target.transform.position.y, (nextX - unitX) / dist);
+                    height = -50 * (nextX - unitX) * (nextX - targetX) / (0.25f * dist * dist);
 
-                Vector3 movePosition = new Vector3(nextX, baseY + height, unit.transform.position.z);
-                transform.position = movePosition;
-                Debug.Log(movePosition);
+                    Vector3 movePosition = new Vector3(nextX, baseY + height, unit.transform.position.z);
+                    transform.position = movePosition;
+                }
+                catch (MissingReferenceException)
+                {
+                    DestroyProjectile();
+                }
+                catch(UnassignedReferenceException)
+                {
+                    DestroyProjectile();
+                }
+                
+               
             }
             else{
                 transform.Translate(Vector2.right * speed * Time.deltaTime);
@@ -83,4 +99,20 @@ public class Projectile : MonoBehaviour
         //Destroys the projectile
         Destroy(gameObject);
     }
-}
+    private void OnTriggerStay2D(Collider2D collision)
+    {
+        if (collision.tag == "Enemy")
+        {
+            Debug.Log("Grenade Hit!");
+            enemy = collision.gameObject.GetComponent<StandardEnemy>();
+            enemy.health -= damage;
+            try
+            {
+                DestroyProjectile();
+            }catch (Exception)
+            {
+                Debug.Log("Error!");
+            }
+        }
+    }
+    }

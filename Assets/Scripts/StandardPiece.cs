@@ -123,7 +123,7 @@ public class StandardPiece : MonoBehaviour, IPointerDownHandler, IBeginDragHandl
         if (collision.gameObject.tag == "Enemy")
         {
             enemyInRange = true;
-            if(enemy == null)
+            if(enemy == null && placed == true)
             {
                 Debug.Log("First enemy found!");
                 enemy = collision.gameObject;
