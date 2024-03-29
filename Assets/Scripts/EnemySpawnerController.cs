@@ -22,7 +22,7 @@ public class EnemySpawnerController : MonoBehaviour
     private Canvas canvas;
     [SerializeField]private Boolean startOfRound = true;
     private int rng;
-    private int timeBetweenSpawn = 2;
+    [SerializeField] private float timeBetweenSpawn = 2f;
    [SerializeField] private float timeCounter;
     private int numberOfEnemies = 10;
     public List<GameObject> eneimes = new List<GameObject>();
@@ -141,6 +141,11 @@ public class EnemySpawnerController : MonoBehaviour
             numberOfEnemies += 2;
             waveNumber++;
             slider.value +=2;
+            if(timeBetweenSpawn >= 0.5)
+            {
+                timeBetweenSpawn -= 0.1f;
+            }
+           
             currency.addBricks(numberOfEnemies*10); //Will need tweaked (Discussion with team needed)
         EnemySelector();
         }

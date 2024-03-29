@@ -10,11 +10,12 @@ public class TowerHealth : MonoBehaviour
     //TextMeshProUGUI text;
     Canvas canvas;
     public Slider slider;
-   public GameObject gameover;
-
+    public GameObject gameover;
+    private PauseObjects isGameover;
     // Start is called before the first frame update
     void Start()
     {
+        isGameover = GameObject.Find("SettingButton").GetComponent<PauseObjects>();
         canvas = GameObject.Find("Player&EnemyUI").GetComponent<Canvas>();
         //text = GameObject.Find("Health").GetComponent<TextMeshProUGUI>();
     }
@@ -27,6 +28,7 @@ public class TowerHealth : MonoBehaviour
         if (health <=0)
        {
           gameover.SetActive(true);
+            isGameover.buttonPressed();
        }
     }
    

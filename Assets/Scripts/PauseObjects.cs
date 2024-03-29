@@ -13,12 +13,12 @@ public class PauseObjects : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        paused = false;
         try
         {
             speed = gameObject.GetComponent<Projectile>().speed;
         }catch(NullReferenceException)
         {
-
         }
     }
 

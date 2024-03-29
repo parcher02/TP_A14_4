@@ -53,7 +53,6 @@ public class Projectile : MonoBehaviour
                     
             }else if(hitInfo && isDemolitionist)
             {
-                Debug.Log("Distance: " + Vector2.Distance(target.transform.position, transform.position));
                 enemy = hitInfo.collider.GetComponent<StandardEnemy>();
                 if (enemy.gameObject == target.gameObject)
                 {
