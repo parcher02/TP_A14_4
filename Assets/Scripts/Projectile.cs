@@ -53,17 +53,21 @@ public class Projectile : MonoBehaviour
                     
             }else if(hitInfo && isDemolitionist)
             {
-              //  if (Vector2.Distance(enemy.transform.position, transform.position) < 10)
-              //  {
+                Debug.Log("Distance: " + Vector2.Distance(target.transform.position, transform.position));
+                enemy = hitInfo.collider.GetComponent<StandardEnemy>();
+                if (enemy.gameObject == target.gameObject)
+                {
                     Debug.Log("grenade landed!");
                     gameObject.GetComponent<CircleCollider2D>().enabled = true;
-             //   }             
+                }
+         
             }
             if (isDemolitionist)
             {
-                unitX = unit.transform.position.x;
+               
                 try
                 {
+                    unitX = unit.transform.position.x;
                     targetX = target.transform.position.x;
                     dist = targetX - unitX;
                     nextX = Mathf.MoveTowards(transform.position.x, targetX, speed * Time.deltaTime);
