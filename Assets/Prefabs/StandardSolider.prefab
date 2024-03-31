@@ -97,9 +97,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   placed: 0
+  isDemolitionist: 0
   canvas: {fileID: 0}
-  health: 0
-  damage: 10
+  health: 100
+  damage: 0
   projectileColour: {r: 0, g: 0.41960788, b: 1, a: 1}
   clicked: 0
   startTimeBetweenShot: 0.5
@@ -110,6 +111,7 @@ MonoBehaviour:
   notPlaced: 0
   currency: {fileID: 0}
   cost: 50
+  enemy: {fileID: 0}
 --- !u!225 &2643203011578608838
 CanvasGroup:
   m_ObjectHideFlags: 0

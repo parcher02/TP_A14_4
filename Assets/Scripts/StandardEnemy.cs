@@ -15,15 +15,18 @@ public class StandardEnemy : MonoBehaviour
     public int health;
     Animator animator;
     public Boolean attack;
-    GameObject unit;
-   [SerializeField] private Boolean collidedWithTower;
+    [SerializeField] GameObject unit;
+    [SerializeField] private Boolean collidedWithTower;
     PlayerCurrency currency;
     TowerHealth tower;
     EnemySpawnerController enemySpawner;
     public int worth;
+    public GameObject attackCollider;
+    [HideInInspector] public Boolean repeatAnimation;
     // Start is called before the first frame update
     void Start()
     {
+        //attackCollider = transform.GetChild(0).GetComponent<Transform>();
         enemySpawner = GameObject.Find("enemySpawner").GetComponent<EnemySpawnerController>();
         rb = this.GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
@@ -42,20 +45,25 @@ public class StandardEnemy : MonoBehaviour
     void Update()
     {
             if (collided == false)
-        {
-            //transform.position = new Vector3(x, transform.position.y, transform.position.z);
-            //x -= speed;
+        {        
             animator.SetBool("Collided", false);
         }
         else
         {
-            if (attack)
-            {
-                Destroy(unit);
-               // animator.PlayInFixedTime("blobAttack", 0, 9.0f);
-               // animator.SetBool("Collided", false);
-                animator.SetTrigger("Idle");
-            }
+            //if (attack)
+            //{
+
+            //    unit.GetComponent<StandardPiece>().damageUnit(damage);
+
+            //    if (unit.GetComponent<StandardPiece>().health <= 0)
+            //    {
+            //        Debug.Log(unit.GetComponent<StandardPiece>().health);
+            //        animator.SetTrigger("Idle");
+            //        Destroy(unit);
+            //    }
+
+
+            //}
         
         }
         if (collidedWithTower && attack)
@@ -74,17 +82,40 @@ public class StandardEnemy : MonoBehaviour
 
     }
 
-    private void OnCollisionEnter2D(Collision2D collision)
+    private void OnCollisionStay2D(Collision2D collision)
     {
         if (collision.gameObject.tag == "Unit")
         {
             unit = collision.gameObject;
             Debug.Log("Collided");
             collided = true;
-          //  animator.PlayInFixedTime("blobMove", 0,9.0f);
             animator.SetTrigger("Attack");
-          //  animator.SetBool("Collided", true);
-           
+            attackCollider.GetComponent<EnemyAttack>().damage = damage;
+            attackCollider.GetComponent<EnemyAttack>().unit = unit;
+            if (attack)
+            {
+                attackCollider.SetActive(true);
+              
+                // unit.GetComponent<StandardPiece>().damageUnit(damage);
+
+
+
+
+            }
+            else
+            {
+                attackCollider.SetActive(false);
+            }
+            if (unit.GetComponent<StandardPiece>().health <= 0)
+            {
+                Debug.Log(unit.GetComponent<StandardPiece>().health);
+                animator.SetTrigger("Idle");
+
+                Destroy(unit);
+
+            }
+          
+
         }
         if(collision.gameObject.tag == "Defence")
         {
@@ -103,5 +134,16 @@ public class StandardEnemy : MonoBehaviour
              Debug.Log("No Longer Collided");
              collided = false;
             }
+    }
+    public void attackUnit()
+    {
+        unit.GetComponent<StandardPiece>().damageUnit(damage);
+
+        if (unit.GetComponent<StandardPiece>().health <= 0)
+        {
+            Debug.Log(unit.GetComponent<StandardPiece>().health);
+            animator.SetTrigger("Idle");
+            Destroy(unit);
+        }
     }
 }

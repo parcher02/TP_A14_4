@@ -13,7 +13,7 @@ public class StandardPiece : MonoBehaviour, IPointerDownHandler, IBeginDragHandl
     public Boolean placed;
     [SerializeField] private Boolean isDemolitionist;
     public Canvas canvas;
-    [SerializeField] private int health;
+    public int health;
     [SerializeField] private int damage;
     [SerializeField] private Color projectileColour;
     public Boolean clicked;
@@ -138,5 +138,10 @@ public class StandardPiece : MonoBehaviour, IPointerDownHandler, IBeginDragHandl
     private void OnTriggerExit2D(Collider2D collision)
     {
         enemyInRange = false;
+    }
+    public void damageUnit(int damage)
+    {
+        Debug.Log(health + " " + damage);
+        health -= damage;
     }
 }
