@@ -130,7 +130,7 @@ MonoBehaviour:
   placed: 0
   isDemolitionist: 0
   canvas: {fileID: 0}
-  health: 0
+  health: 150
   damage: 5
   projectileColour: {r: 1, g: 0.6, b: 0.20000002, a: 1}
   clicked: 0

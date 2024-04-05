@@ -44,7 +44,7 @@ public class Projectile : MonoBehaviour
                 
                enemy = hitInfo.collider.GetComponent<StandardEnemy>();
               //  Debug.Log(Vector2.Distance(enemy.transform.position, transform.position));
-                if (Vector2.Distance(enemy.transform.position, transform.position) < 50)
+                if (Vector2.Distance(enemy.transform.position, transform.position) < 30)
                 {
                     Debug.Log("enemy hit!");
                     enemy.health -= damage;
