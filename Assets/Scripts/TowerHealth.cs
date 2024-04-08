@@ -7,7 +7,6 @@ using UnityEngine.UI;
 public class TowerHealth : MonoBehaviour
 {
     public int health = 100;
-    //TextMeshProUGUI text;
     Canvas canvas;
     public Slider slider;
     public GameObject gameover;
@@ -17,17 +16,16 @@ public class TowerHealth : MonoBehaviour
     {
         isGameover = GameObject.Find("SettingButton").GetComponent<PauseObjects>();
         canvas = GameObject.Find("Player&EnemyUI").GetComponent<Canvas>();
-        //text = GameObject.Find("Health").GetComponent<TextMeshProUGUI>();
     }
 
     // Update is called once per frame
     void Update()
     {
+        //Updates the player health bar once per frame
         slider.value = health;
-        //text.text = "Health: " + health + "/100";
         if (health <=0)
        {
-          gameover.SetActive(true);
+          gameover.SetActive(true); //Once the towers health goes below zero the game over screen is presented
             isGameover.buttonPressed();
        }
     }

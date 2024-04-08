@@ -52,7 +52,7 @@ public class EnemySpawnerController : MonoBehaviour
   
  
     private void rngSelector()
-    {
+    {//Randomly selects a lane in which the enemy will spawn in
         rng = UnityEngine.Random.Range(1,6);
         if(rng == 1) { 
         location = lane1.transform.position;
@@ -71,7 +71,7 @@ public class EnemySpawnerController : MonoBehaviour
         }
     }
     private void EnemySelector()
-    {
+    {//Randomly selects what each enemy will be per wave
         for(int i = 0; i < numberOfEnemies;i++)
         {
             int random = UnityEngine.Random.Range(0, usableEneimes.Count);
@@ -83,9 +83,11 @@ public class EnemySpawnerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        waveText.text = "Wave " + waveNumber;
-        slider.value = enemyCount;
+        waveText.text = "Wave " + waveNumber; //Displays wave number
+        slider.value = enemyCount; //Displays number of enemies left
         //text.text = "Number of Enemies: " + enemyCount;
+        
+        //After a certain amount of time a new enemy spawns, each wave will increase the rate they spawn
         if(timeCounter > 0)
         {
             timeCounter -= Time.deltaTime;
@@ -98,7 +100,7 @@ public class EnemySpawnerController : MonoBehaviour
             {
             
                 try
-                {
+                {//Attempts to spawn in the enemies
                     enemy = Instantiate(eneimes[0], gameObject.transform);
                     eneimes.Remove(eneimes[0]);
                     startOfRound = false;
@@ -121,7 +123,7 @@ public class EnemySpawnerController : MonoBehaviour
             waveComplete = true;
         }
             if (GameObject.FindGameObjectsWithTag("Enemy").Length <= 0 && waveComplete == true)
-        {                
+        {   //Every 4 waves a new type of enemy will introducted and start to spawn in
             float wave = waveNumber % 3;
             Debug.Log("Wave Value: " + wave);
             if (wave == 0)
@@ -141,12 +143,12 @@ public class EnemySpawnerController : MonoBehaviour
             numberOfEnemies += 2;
             waveNumber++;
             slider.value +=2;
-            if(timeBetweenSpawn >= 0.5)
+            if(timeBetweenSpawn >= 0.5) //Decreases time taken to spawn in enemies
             {
                 timeBetweenSpawn -= 0.1f;
             }
            
-            currency.addBricks(numberOfEnemies*10); //Will need tweaked (Discussion with team needed)
+            currency.addBricks(numberOfEnemies*4); //Will need tweaked (Discussion with team needed)
         EnemySelector();
         }
     }

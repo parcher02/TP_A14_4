@@ -43,7 +43,6 @@ public class Projectile : MonoBehaviour
             {
                 
                enemy = hitInfo.collider.GetComponent<StandardEnemy>();
-              //  Debug.Log(Vector2.Distance(enemy.transform.position, transform.position));
                 if (Vector2.Distance(enemy.transform.position, transform.position) < 30)
                 {
                     Debug.Log("enemy hit!");
@@ -57,7 +56,7 @@ public class Projectile : MonoBehaviour
                 if (enemy.gameObject == target.gameObject)
                 {
                     Debug.Log("grenade landed!");
-                    gameObject.GetComponent<CircleCollider2D>().enabled = true;
+                    gameObject.GetComponent<CircleCollider2D>().enabled = true; //Once collided the collider will enable and attack nearby enemies
                 }
          
             }
@@ -66,6 +65,7 @@ public class Projectile : MonoBehaviour
                
                 try
                 {
+                    //Moves the projectile at an arc towards the selected enemy
                     unitX = unit.transform.position.x;
                     targetX = target.transform.position.x;
                     dist = targetX - unitX;
@@ -88,7 +88,7 @@ public class Projectile : MonoBehaviour
                
             }
             else{
-                transform.Translate(Vector2.right * speed * Time.deltaTime);
+                transform.Translate(Vector2.right * speed * Time.deltaTime); //Moves the projectile in a straight line going right
             }
             
             
@@ -103,7 +103,7 @@ public class Projectile : MonoBehaviour
         Destroy(gameObject);
     }
     private void OnTriggerStay2D(Collider2D collision)
-    {
+    { //Upon the grenade landing it damages the lanes beside it
         if (collision.tag == "Enemy")
         {
             Debug.Log("Grenade Hit!");
@@ -114,7 +114,6 @@ public class Projectile : MonoBehaviour
                 DestroyProjectile();
             }catch (Exception)
             {
-                Debug.Log("Error!");
             }
         }
     }

@@ -10,8 +10,8 @@ public class PlayerCurrency : MonoBehaviour
 
     // Start is called before the first frame update
     void Start()
-    {
-        bricks += 200;
+    {//Starts the player off with 100 bricks
+        bricks += 100;
         text = GameObject.Find("Currency").GetComponent<TextMeshProUGUI>();
     }
 
@@ -21,15 +21,15 @@ public class PlayerCurrency : MonoBehaviour
         viewBricks();
     }
     public void addBricks(int newBricks)
-    {
+    {//Adds bricks when a wave is over or an enemy has been killed
         bricks += newBricks;
     }
     public void removeBricks(int bricks)
-    {
+    {//Removes bricks when a unit is bought
         this.bricks -= bricks;
     }
     private void viewBricks()
-    {
+    {//Updates the numbers bricks a player has once per frame
         text.text = "Bricks: " + bricks;
     }
 }

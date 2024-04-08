@@ -38,11 +38,6 @@ public class StandardPiece : MonoBehaviour, IPointerDownHandler, IBeginDragHandl
         rectTransform = GetComponent<RectTransform>();
         canvasGroup = GetComponent<CanvasGroup>();
     }
-    private void FixedUpdate()
-    {
-
-     
-    }
     private void Start()
     {
         currency = GameObject.Find("Tower").GetComponent<PlayerCurrency>();
@@ -52,19 +47,18 @@ public class StandardPiece : MonoBehaviour, IPointerDownHandler, IBeginDragHandl
         gameObject.GetComponent<BoxCollider2D>().enabled = false;
     }
     public void OnPointerDown(PointerEventData eventData)
-    {
-      
+    {  
     }
 
     public void OnBeginDrag(PointerEventData eventData)
-    {
-       
-            canvasGroup.blocksRaycasts = false;
+    { //Allows the unit to be dragged
+
+        canvasGroup.blocksRaycasts = false;
         
     }
 
     public void OnEndDrag(PointerEventData eventData)
-    {
+    { //Checks to see if when a unit is dropped it is on a slot, if not it deletes the unit
         canvasGroup.blocksRaycasts = true;
         if (placed == false)
         {
@@ -74,7 +68,7 @@ public class StandardPiece : MonoBehaviour, IPointerDownHandler, IBeginDragHandl
     }
 
     public void OnDrag(PointerEventData eventData)
-    {
+    {//Changes the position of the selected unit based the pointers coordinates
         if (placed == false && currency.bricks >= cost)
         {
             rectTransform.anchoredPosition += eventData.delta / canvas.scaleFactor;
@@ -84,7 +78,7 @@ public class StandardPiece : MonoBehaviour, IPointerDownHandler, IBeginDragHandl
     public void OnPointerClick(PointerEventData eventData)
     {
         if (eventData.button == PointerEventData.InputButton.Right && placed == true)
-        {
+        {//If right click is used on a placed unit, it will delete it and give the player back half of the cost
             Debug.Log("DELETE");
             Destroy(gameObject);
             currency.addBricks(cost / 2);
@@ -95,10 +89,10 @@ public class StandardPiece : MonoBehaviour, IPointerDownHandler, IBeginDragHandl
         if (placed)
         {
             gameObject.GetComponent<BoxCollider2D>().enabled = true;
-            if (enemyInRange)
+            if (enemyInRange) // Checks if an enemy is within range
             {           
                     if (timeBetweenShot <= 0)
-                    {
+                    {// Shoots projectile and provides the object with the required data needed
                         Bullet = Instantiate(projectile, shotPoint.position, transform.rotation);
                         Bullet.GetComponent<Projectile>().damage = damage;
                         Bullet.GetComponent<Image>().color = projectileColour;
@@ -115,13 +109,13 @@ public class StandardPiece : MonoBehaviour, IPointerDownHandler, IBeginDragHandl
                     }                                              
             }
         }
-        animator.SetBool("Placed", placed);
-        animator.SetBool("Attack", enemyInRange);
+        animator.SetBool("Placed", placed); //Plays the animation when placed
+        animator.SetBool("Attack", enemyInRange); //Plays the animation when attacking
     }
     private void OnTriggerStay2D(Collider2D collision)
     {
         if (collision.gameObject.tag == "Enemy")
-        {
+        {//Activates the enemyInRange to allow the unit to shoot
             enemyInRange = true;
             if(enemy == null && placed == true)
             {
@@ -140,7 +134,7 @@ public class StandardPiece : MonoBehaviour, IPointerDownHandler, IBeginDragHandl
         enemyInRange = false;
     }
     public void damageUnit(int damage)
-    {
+    {//When the unit is being attacked it take damage
         Debug.Log(health + " " + damage);
         health -= damage;
     }

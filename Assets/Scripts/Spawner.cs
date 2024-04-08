@@ -19,7 +19,7 @@ public class Spawner : MonoBehaviour
 
     // Update is called once per frame
     void Update()
-    {
+    {//If a unit has been placed a new unit will be spawned in its place
         if (solider != null && hasSoliderPlaced.placed == true || hasSoliderPlaced.notPlaced == true)
         {
            createPiece();
@@ -27,7 +27,7 @@ public class Spawner : MonoBehaviour
 
     }
     private void createPiece()
-    {
+    {//Spawns the units with the required data needed to function
         solider = Instantiate(SpawnerType, gameObject.transform);
         hasSoliderPlaced = solider.GetComponent<StandardPiece>();
         solider.transform.SetParent(canvas.transform, false);

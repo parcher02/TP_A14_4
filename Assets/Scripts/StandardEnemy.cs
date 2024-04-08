@@ -26,7 +26,6 @@ public class StandardEnemy : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        //attackCollider = transform.GetChild(0).GetComponent<Transform>();
         enemySpawner = GameObject.Find("enemySpawner").GetComponent<EnemySpawnerController>();
         rb = this.GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
@@ -37,35 +36,14 @@ public class StandardEnemy : MonoBehaviour
     private void FixedUpdate()
     {
         
-        
+        //Moves enemy from the right to the left
         Vector2 direction = new Vector2(-1,0);
         rb.MovePosition((Vector2)transform.position + direction * speed * Time.deltaTime);
     }
     // Update is called once per frame
     void Update()
     {
-            if (collided == false)
-        {        
-            animator.SetBool("Collided", false);
-        }
-        else
-        {
-            //if (attack)
-            //{
-
-            //    unit.GetComponent<StandardPiece>().damageUnit(damage);
-
-            //    if (unit.GetComponent<StandardPiece>().health <= 0)
-            //    {
-            //        Debug.Log(unit.GetComponent<StandardPiece>().health);
-            //        animator.SetTrigger("Idle");
-            //        Destroy(unit);
-            //    }
-
-
-            //}
-        
-        }
+        //If it collides with the tower it will destroy the enemy game object and damage the tower
         if (collidedWithTower && attack)
         {
             enemySpawner.enemyCount -= 1;
@@ -74,6 +52,7 @@ public class StandardEnemy : MonoBehaviour
         }
         if (health <= 0)
         {
+            //If the enemies health goes below zero it destroy the enemy and give the player currency
             currency.addBricks(worth);
             enemySpawner.enemyCount -= 1;
             Destroy(gameObject);
@@ -84,23 +63,18 @@ public class StandardEnemy : MonoBehaviour
 
     private void OnCollisionStay2D(Collision2D collision)
     {
+        //Upon collision with a unit it will activate the attack animation and keep attacking until it dies or the unit dies
         if (collision.gameObject.tag == "Unit")
         {
             unit = collision.gameObject;
             Debug.Log("Collided");
             collided = true;
             animator.SetTrigger("Attack");
-            attackCollider.GetComponent<EnemyAttack>().damage = damage;
-            attackCollider.GetComponent<EnemyAttack>().unit = unit;
+            attackCollider.GetComponent<EnemyAttack>().damage = damage; //Sends the damage it will cause to the collider
+            attackCollider.GetComponent<EnemyAttack>().unit = unit; //Tells the collider which unit it needs to attack
             if (attack)
             {
-                attackCollider.SetActive(true);
-              
-                // unit.GetComponent<StandardPiece>().damageUnit(damage);
-
-
-
-
+                attackCollider.SetActive(true);             
             }
             else
             {
@@ -108,15 +82,15 @@ public class StandardEnemy : MonoBehaviour
             }
             if (unit.GetComponent<StandardPiece>().health <= 0)
             {
-                Debug.Log(unit.GetComponent<StandardPiece>().health);
+               //Once the units health goes below zero it will set the enemies animation to idle and destroy that unit
                 animator.SetTrigger("Idle");
-
                 Destroy(unit);
 
             }
           
 
         }
+        //If the enemy collides with the tower it will attack once
         if(collision.gameObject.tag == "Defence")
         {
             collidedWithTower = true;
@@ -129,21 +103,11 @@ public class StandardEnemy : MonoBehaviour
 
     private void OnCollisionExit2D(Collision2D collision)
     {
+        //Upon no longer attacking it will state in the debug that it is no longer colliding with a unit
         if (collision.gameObject.tag == "Unit")
             {
              Debug.Log("No Longer Collided");
              collided = false;
             }
-    }
-    public void attackUnit()
-    {
-        unit.GetComponent<StandardPiece>().damageUnit(damage);
-
-        if (unit.GetComponent<StandardPiece>().health <= 0)
-        {
-            Debug.Log(unit.GetComponent<StandardPiece>().health);
-            animator.SetTrigger("Idle");
-            Destroy(unit);
-        }
     }
 }

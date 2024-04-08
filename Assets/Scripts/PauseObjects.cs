@@ -24,7 +24,7 @@ public class PauseObjects : MonoBehaviour
 
     // Update is called once per frame
     void Update()
-    {
+    {//When the settings button has been pressed or when the game over screen appear, all the units/enemies will freeze and disapear and won't perform any actions
         if (paused)
         {
             if(gameObject.GetComponent<Button>() == null && gameObject.GetComponent<Projectile>() == null) {

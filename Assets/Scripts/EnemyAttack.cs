@@ -9,6 +9,7 @@ public class EnemyAttack : MonoBehaviour
   
     private void OnEnable()
     {
+        //When enabled will do damage to selected unit
         unit.GetComponent<StandardPiece>().damageUnit(damage);
     }
 }
