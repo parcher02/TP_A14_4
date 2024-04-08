@@ -69,7 +69,7 @@ public class StandardEnemy : MonoBehaviour
             unit = collision.gameObject;
             Debug.Log("Collided");
             collided = true;
-            animator.SetTrigger("Attack");
+            //animator.SetTrigger("Attack");
             attackCollider.GetComponent<EnemyAttack>().damage = damage; //Sends the damage it will cause to the collider
             attackCollider.GetComponent<EnemyAttack>().unit = unit; //Tells the collider which unit it needs to attack
             if (attack)
@@ -100,7 +100,13 @@ public class StandardEnemy : MonoBehaviour
           
         }
     }
-
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.tag == "Unit")
+        {
+            animator.SetTrigger("Attack");
+        }
+    }
     private void OnCollisionExit2D(Collision2D collision)
     {
         //Upon no longer attacking it will state in the debug that it is no longer colliding with a unit
