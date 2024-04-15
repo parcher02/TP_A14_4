@@ -200,7 +200,7 @@ MonoBehaviour:
   attack: 0
   unit: {fileID: 0}
   collidedWithTower: 0
-  worth: 75
+  worth: 50
   attackCollider: {fileID: 3428074298635746812}
   repeatAnimation: 0
 --- !u!50 &5055028212145434130
