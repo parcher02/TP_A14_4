@@ -126,6 +126,7 @@ public class StandardPiece : MonoBehaviour, IPointerDownHandler, IBeginDragHandl
         }
         else
         {
+            Debug.Log(collision.gameObject.tag);
             enemyInRange = false;
         }
     }

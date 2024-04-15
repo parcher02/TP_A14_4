@@ -202,6 +202,7 @@ MonoBehaviour:
   collidedWithTower: 0
   worth: 50
   attackCollider: {fileID: 1389782126607957308}
+  repeatAnimation: 0
 --- !u!50 &2876791789519674506
 Rigidbody2D:
   serializedVersion: 4
@@ -261,7 +262,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 50, y: 50}
+  m_Offset: {x: 50, y: 24.9}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -272,7 +273,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 100, y: 94.88}
+  m_Size: {x: 100, y: 50.87}
   m_EdgeRadius: 0
 --- !u!95 &7434327058589734470
 Animator:
