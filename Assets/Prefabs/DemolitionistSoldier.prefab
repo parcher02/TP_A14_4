@@ -141,7 +141,7 @@ MonoBehaviour:
   Shoot: 0
   notPlaced: 0
   currency: {fileID: 0}
-  cost: 125
+  cost: 150
   enemy: {fileID: 0}
 --- !u!225 &1251019260903568670
 CanvasGroup:
