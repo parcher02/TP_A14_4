@@ -20,7 +20,7 @@ public class Projectile : MonoBehaviour
     public GameObject target;
 
     private float unitX, targetX;
-
+    Animator animator;
     private float dist, nextX;
 
     private float baseY, height;
@@ -29,6 +29,7 @@ public class Projectile : MonoBehaviour
     {
         canvas = GameObject.Find("Player&EnemyUI").GetComponent<Canvas>();
         //transform.SetParent(canvas.transform, false);
+        animator = GetComponent<Animator>();
         Invoke("DestroyProjectile", lifeTime);
     }
     // Update is called once per frame
@@ -56,6 +57,7 @@ public class Projectile : MonoBehaviour
                 if (enemy.gameObject == target.gameObject)
                 {
                     Debug.Log("grenade landed!");
+                    animator.SetTrigger("explosion");
                     gameObject.GetComponent<CircleCollider2D>().enabled = true; //Once collided the collider will enable and attack nearby enemies
                 }
          
@@ -109,12 +111,14 @@ public class Projectile : MonoBehaviour
             Debug.Log("Grenade Hit!");
             enemy = collision.gameObject.GetComponent<StandardEnemy>();
             enemy.health -= damage;
+           
             try
             {
                 DestroyProjectile();
             }catch (Exception)
             {
             }
+           
         }
     }
     }

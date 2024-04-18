@@ -1,0 +1,919 @@
+fileFormatVersion: 2
+guid: 5e77385c604cd464c90cdb1c2c7a4947
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 12
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: demomanidle_0
+      rect:
+        serializedVersion: 2
+        x: 28
+        y: 2948
+        width: 625
+        height: 555
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: df6c13e98ae341f4a9d93fc386c5c980
+      internalID: -1321582573
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: demomanidle_1
+      rect:
+        serializedVersion: 2
+        x: 680
+        y: 2950
+        width: 626
+        height: 553
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3acc46a4dfa2c174ea340b55aebeaea2
+      internalID: 2061337926
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: demomanidle_2
+      rect:
+        serializedVersion: 2
+        x: 1331
+        y: 2950
+        width: 627
+        height: 553
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: caa6f056f5761174798e3c0bc43e2a81
+      internalID: 1687476508
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: demomanidle_3
+      rect:
+        serializedVersion: 2
+        x: 1984
+        y: 2948
+        width: 627
+        height: 555
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3124ccc3570d01c4c9df3c3f4d5c2dec
+      internalID: -268782822
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: demomanidle_4
+      rect:
+        serializedVersion: 2
+        x: 2636
+        y: 2950
+        width: 626
+        height: 553
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e66137ea034f1d84db3ad516bef4d6a6
+      internalID: 1852003036
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: demomanidle_5
+      rect:
+        serializedVersion: 2
+        x: 3289
+        y: 2948
+        width: 625
+        height: 555
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 933b97b49d046e34d8342c4339b83d65
+      internalID: 1027868958
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: demomanidle_6
+      rect:
+        serializedVersion: 2
+        x: 28
+        y: 2365
+        width: 625
+        height: 555
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0112d26acfd2f1544a248c8841debca7
+      internalID: -1897165652
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: demomanidle_7
+      rect:
+        serializedVersion: 2
+        x: 680
+        y: 2365
+        width: 626
+        height: 555
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a31a795e4f23ec2468b3d4077f7905fa
+      internalID: -849132577
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: demomanidle_8
+      rect:
+        serializedVersion: 2
+        x: 1331
+        y: 2365
+        width: 627
+        height: 555
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2e6baa1ac1463c9489327e5dea0f4694
+      internalID: 1212504976
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: demomanidle_9
+      rect:
+        serializedVersion: 2
+        x: 1984
+        y: 2365
+        width: 627
+        height: 555
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fc64401e6be7a434b8ceab9485326c15
+      internalID: 173399466
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: demomanidle_10
+      rect:
+        serializedVersion: 2
+        x: 2636
+        y: 2365
+        width: 626
+        height: 555
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a7cc2b803cc5e254192e57f000f2a082
+      internalID: 495183676
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: demomanidle_11
+      rect:
+        serializedVersion: 2
+        x: 3289
+        y: 2365
+        width: 625
+        height: 556
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 90e3558df9f5e8143bc70eec9ed9dc7d
+      internalID: 1220767220
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: demomanidle_12
+      rect:
+        serializedVersion: 2
+        x: 28
+        y: 1780
+        width: 625
+        height: 558
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 07901a5a0677d1c4ba35e5ace98a057b
+      internalID: 2117448673
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: demomanidle_13
+      rect:
+        serializedVersion: 2
+        x: 680
+        y: 1781
+        width: 626
+        height: 557
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f314e12488705cc4bbce91c90b83bf21
+      internalID: -961305788
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: demomanidle_14
+      rect:
+        serializedVersion: 2
+        x: 1333
+        y: 1781
+        width: 625
+        height: 557
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 425f96f6294aa8f418b869765baf6bed
+      internalID: 1319912694
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: demomanidle_15
+      rect:
+        serializedVersion: 2
+        x: 1984
+        y: 1780
+        width: 627
+        height: 558
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1fa8221aa04f20b46931aaf3b5b9970c
+      internalID: 1898624610
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: demomanidle_16
+      rect:
+        serializedVersion: 2
+        x: 2636
+        y: 1781
+        width: 626
+        height: 557
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4d5774bf69c301343ba2ae4fd2155d9a
+      internalID: 486383208
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: demomanidle_17
+      rect:
+        serializedVersion: 2
+        x: 3289
+        y: 1781
+        width: 625
+        height: 557
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 82b53cf7ff668664a9f3ebb593590543
+      internalID: -923092764
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: demomanidle_18
+      rect:
+        serializedVersion: 2
+        x: 28
+        y: 1196
+        width: 625
+        height: 558
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7a4ab9457e3f62d48a6ed4cac4788a37
+      internalID: 194352824
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: demomanidle_19
+      rect:
+        serializedVersion: 2
+        x: 680
+        y: 1196
+        width: 626
+        height: 558
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1134ea420f25c3f4cacef2cea99751dd
+      internalID: -361021509
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: demomanidle_20
+      rect:
+        serializedVersion: 2
+        x: 1331
+        y: 1196
+        width: 627
+        height: 558
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cf108bd2ec8b87349973de2c42ca1e84
+      internalID: 2143297539
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: demomanidle_21
+      rect:
+        serializedVersion: 2
+        x: 1984
+        y: 1196
+        width: 627
+        height: 558
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c267a1ccfec5e324eb522685670a6e54
+      internalID: -347718653
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: demomanidle_22
+      rect:
+        serializedVersion: 2
+        x: 2636
+        y: 1196
+        width: 626
+        height: 558
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8fdccd48627eafa4793dd35280281c4a
+      internalID: -1560769291
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: demomanidle_23
+      rect:
+        serializedVersion: 2
+        x: 3289
+        y: 1196
+        width: 625
+        height: 558
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2d8f561648d544a4f89c05ace8bf3fc0
+      internalID: -1483145973
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: demomanidle_24
+      rect:
+        serializedVersion: 2
+        x: 28
+        y: 613
+        width: 625
+        height: 556
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a27ad59c5957d0e45b787ea4180c5214
+      internalID: -82579737
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: demomanidle_25
+      rect:
+        serializedVersion: 2
+        x: 680
+        y: 613
+        width: 626
+        height: 556
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3a65effb97d059647ac9a664f2de79b6
+      internalID: -69056606
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: demomanidle_26
+      rect:
+        serializedVersion: 2
+        x: 1331
+        y: 613
+        width: 627
+        height: 555
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3e9cb9d87e7e5cf4fa5c2d8dded5f78d
+      internalID: 1415740654
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: demomanidle_27
+      rect:
+        serializedVersion: 2
+        x: 1984
+        y: 613
+        width: 627
+        height: 555
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 05701cbdbd324294c8c12e9bb2033740
+      internalID: -109465140
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: demomanidle_28
+      rect:
+        serializedVersion: 2
+        x: 2636
+        y: 613
+        width: 626
+        height: 555
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: faa4a7768d1fc724f917612297fd17ba
+      internalID: 1909414809
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: demomanidle_29
+      rect:
+        serializedVersion: 2
+        x: 3287
+        y: 613
+        width: 627
+        height: 555
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a49d70cabef95e946b2b08ad5b1cf2d5
+      internalID: 1213376242
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: demomanidle_30
+      rect:
+        serializedVersion: 2
+        x: 27
+        y: 28
+        width: 626
+        height: 555
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d5206b48dbb2a524aa21675169fbfb07
+      internalID: -1930935792
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: demomanidle_31
+      rect:
+        serializedVersion: 2
+        x: 679
+        y: 28
+        width: 627
+        height: 555
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 527b058628baee94ab65ea2a82d32bb0
+      internalID: -756151503
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: demomanidle_32
+      rect:
+        serializedVersion: 2
+        x: 1331
+        y: 28
+        width: 627
+        height: 555
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 26dccc51264493e4baac9ccd502f22fa
+      internalID: -1570481038
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: demomanidle_33
+      rect:
+        serializedVersion: 2
+        x: 1984
+        y: 28
+        width: 627
+        height: 555
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d94c436f8a828af43aabfdd9d26b9262
+      internalID: -1928345205
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: demomanidle_34
+      rect:
+        serializedVersion: 2
+        x: 2636
+        y: 28
+        width: 626
+        height: 555
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 009e600510d963046852bee4ebc4e73f
+      internalID: 1726276017
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: demomanidle_35
+      rect:
+        serializedVersion: 2
+        x: 3287
+        y: 28
+        width: 627
+        height: 555
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 09f4ffa9a9628484da90a5e8a6b93571
+      internalID: 566910409
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      demomanidle_0: -1321582573
+      demomanidle_1: 2061337926
+      demomanidle_10: 495183676
+      demomanidle_11: 1220767220
+      demomanidle_12: 2117448673
+      demomanidle_13: -961305788
+      demomanidle_14: 1319912694
+      demomanidle_15: 1898624610
+      demomanidle_16: 486383208
+      demomanidle_17: -923092764
+      demomanidle_18: 194352824
+      demomanidle_19: -361021509
+      demomanidle_2: 1687476508
+      demomanidle_20: 2143297539
+      demomanidle_21: -347718653
+      demomanidle_22: -1560769291
+      demomanidle_23: -1483145973
+      demomanidle_24: -82579737
+      demomanidle_25: -69056606
+      demomanidle_26: 1415740654
+      demomanidle_27: -109465140
+      demomanidle_28: 1909414809
+      demomanidle_29: 1213376242
+      demomanidle_3: -268782822
+      demomanidle_30: -1930935792
+      demomanidle_31: -756151503
+      demomanidle_32: -1570481038
+      demomanidle_33: -1928345205
+      demomanidle_34: 1726276017
+      demomanidle_35: 566910409
+      demomanidle_4: 1852003036
+      demomanidle_5: 1027868958
+      demomanidle_6: -1897165652
+      demomanidle_7: -849132577
+      demomanidle_8: 1212504976
+      demomanidle_9: 173399466
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

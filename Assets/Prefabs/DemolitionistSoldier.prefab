@@ -98,14 +98,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.026822077, g: 0.4339623, b: 0, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: -182535506, guid: 86df3877585938e4397beeea40925b3f, type: 3}
+  m_Sprite: {fileID: -1321582573, guid: 5e77385c604cd464c90cdb1c2c7a4947, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -132,9 +132,10 @@ MonoBehaviour:
   canvas: {fileID: 0}
   health: 200
   damage: 50
-  projectileColour: {r: 0.027450982, g: 0.43529415, b: 0, a: 1}
+  projectileColour: {r: 1, g: 1, b: 1, a: 1}
   clicked: 0
-  startTimeBetweenShot: 2
+  timeBetweenShot: 0
+  startTimeBetweenShot: 2.5
   projectile: {fileID: 1055419334482619256, guid: 53963346a66018b4b9ff7aad6c308598, type: 3}
   offset: 180
   enemyInRange: 0

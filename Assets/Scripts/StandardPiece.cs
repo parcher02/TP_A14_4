@@ -19,7 +19,7 @@ public class StandardPiece : MonoBehaviour, IPointerDownHandler, IBeginDragHandl
     public Boolean clicked;
     private CanvasGroup canvasGroup;
     private RectTransform rectTransform;
-    private float timeBetweenShot;
+    [SerializeField] private float timeBetweenShot;
     public float startTimeBetweenShot;
     public GameObject projectile;
     private GameObject Bullet;
@@ -33,6 +33,7 @@ public class StandardPiece : MonoBehaviour, IPointerDownHandler, IBeginDragHandl
     public PlayerCurrency currency;
     [SerializeField] public int cost;
      public GameObject enemy;
+    private Boolean firstShot = true;
     private void Awake()
     {
         rectTransform = GetComponent<RectTransform>();
@@ -93,19 +94,23 @@ public class StandardPiece : MonoBehaviour, IPointerDownHandler, IBeginDragHandl
             {           
                     if (timeBetweenShot <= 0)
                     {// Shoots projectile and provides the object with the required data needed
+                    Debug.Log("shoot!");
+                    //if (Shoot)
+                    //{
                         Bullet = Instantiate(projectile, shotPoint.position, transform.rotation);
                         Bullet.GetComponent<Projectile>().damage = damage;
                         Bullet.GetComponent<Image>().color = projectileColour;
                         Bullet.GetComponent<Projectile>().isDemolitionist = isDemolitionist;
-                    Bullet.GetComponent<Projectile>().target = enemy;
-                    Bullet.GetComponent<Projectile>().unit = gameObject;
+                        Bullet.GetComponent<Projectile>().target = enemy;
+                        Bullet.GetComponent<Projectile>().unit = gameObject;
                         Bullet.transform.SetParent(canvas.transform, false);
                         Bullet.transform.position = shotPoint.position;
                         timeBetweenShot = startTimeBetweenShot;
+                    //}
                     }
                     else
                     {
-                        timeBetweenShot -= Time.deltaTime;
+                        timeBetweenShot -= Time.deltaTime;                 
                     }                                              
             }
         }
