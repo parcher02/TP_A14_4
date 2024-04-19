@@ -95,8 +95,6 @@ public class StandardPiece : MonoBehaviour, IPointerDownHandler, IBeginDragHandl
                     if (timeBetweenShot <= 0)
                     {// Shoots projectile and provides the object with the required data needed
                     Debug.Log("shoot!");
-                    //if (Shoot)
-                    //{
                         Bullet = Instantiate(projectile, shotPoint.position, transform.rotation);
                         Bullet.GetComponent<Projectile>().damage = damage;
                         Bullet.GetComponent<Image>().color = projectileColour;
@@ -106,7 +104,6 @@ public class StandardPiece : MonoBehaviour, IPointerDownHandler, IBeginDragHandl
                         Bullet.transform.SetParent(canvas.transform, false);
                         Bullet.transform.position = shotPoint.position;
                         timeBetweenShot = startTimeBetweenShot;
-                    //}
                     }
                     else
                     {
