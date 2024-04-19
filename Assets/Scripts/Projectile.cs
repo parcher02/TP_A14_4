@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using TreeEditor;
 using UnityEngine;
 
 public class Projectile : MonoBehaviour
@@ -54,11 +55,12 @@ public class Projectile : MonoBehaviour
             }else if(hitInfo && isDemolitionist)
             {
                 enemy = hitInfo.collider.GetComponent<StandardEnemy>();
-                if (enemy.gameObject == target.gameObject)
+                if (enemy.gameObject == target.gameObject )
                 {
                     Debug.Log("grenade landed!");
                     animator.SetTrigger("explosion");
                     gameObject.GetComponent<CircleCollider2D>().enabled = true; //Once collided the collider will enable and attack nearby enemies
+                   
                 }
          
             }
@@ -111,11 +113,13 @@ public class Projectile : MonoBehaviour
             Debug.Log("Grenade Hit!");
             enemy = collision.gameObject.GetComponent<StandardEnemy>();
             enemy.health -= damage;
-           
+          
             try
             {
                 DestroyProjectile();
-            }catch (Exception)
+
+            }
+            catch (Exception)
             {
             }
            

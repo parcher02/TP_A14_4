@@ -135,7 +135,7 @@ MonoBehaviour:
   projectileColour: {r: 1, g: 1, b: 1, a: 1}
   clicked: 0
   timeBetweenShot: 0
-  startTimeBetweenShot: 2.5
+  startTimeBetweenShot: 2.3
   projectile: {fileID: 1055419334482619256, guid: 53963346a66018b4b9ff7aad6c308598, type: 3}
   offset: 180
   enemyInRange: 0
