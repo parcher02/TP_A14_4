@@ -11,7 +11,7 @@ public class PlayerCurrency : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {//Starts the player off with 100 bricks
-        bricks += 200;
+        bricks += 100;
         text = GameObject.Find("Currency").GetComponent<TextMeshProUGUI>();
     }
 
